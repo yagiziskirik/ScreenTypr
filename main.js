@@ -1,14 +1,25 @@
-const { app, BrowserWindow } = require('electron')
+const { app, BrowserWindow, ipcMain } = require('electron')
+const path = require('path')
+
+var win;
+var isFrameless = true;
 
 const createWindow = () => {
-    const win = new BrowserWindow({
+    win = new BrowserWindow({
         width: 800,
         height: 600,
         frame: false,
         transparent: true,
-        title: 'ScreenTypr'
+        title: 'ScreenTypr',
+        webPreferences: {
+            preload: path.join(app.getAppPath(), 'preload.js')
+        }
     })
 
+    ipcMain.on('quit-app', (_) => {
+        app.quit()
+    })
+    
     win.loadFile('index.html')
     win.maximize()
 }

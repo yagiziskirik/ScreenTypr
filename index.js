@@ -32,9 +32,18 @@ document.onkeydown = function (e) {
             } else if (inputVal == "!help") {
                 createPast("Type '!help' to show this screen.", 10, true);
                 createPast("Type '!color' to switch between colors.", 10, true);
+                createPast("Type '!window' to toggle window borders and moving.", 10, true);
+                createPast("Type '!greenScreen' to activate green screen mode.", 10, true);
                 createPast("Type '!sleepTime x' to change sleep time to x seconds.", 10, true);
+                createPast("Type '!quit' to close the program", 10, true);
+            } else if (inputVal == "!greenScreen") {
+                document.querySelector('.content').classList.toggle("content-green-screen");
             } else if (inputVal.includes("!sleepTime")) {
                 sleepTime = parseInt(inputVal.split(" ")[1]);
+            } else if (inputVal == "!window") {
+                document.querySelector('.content').classList.toggle("draggable");
+            } else if (inputVal == "!quit") {
+                window.electronAPI.quitApplication();
             } else {
                 createPast(inputVal, sleepTime);
             }

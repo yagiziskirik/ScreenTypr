@@ -1,6 +1,8 @@
 body {
     margin: 0;
     padding: 0;
+    display: flex;
+    justify-content: center;
 }
 
 .content {
@@ -8,6 +10,20 @@ body {
     width: 100vw;
     height: 100vh;
     align-items: end;
+}
+
+.draggable {
+    -webkit-app-region: drag;
+    width: calc(100vw - 2px);
+    height: calc(100vh - 4px);
+    margin: 1px;
+    border: solid 1px white;
+    border-radius: 10px;
+    background-color: burlywood;
+}
+
+.content-green-screen {
+    background-color: #00eb00;
 }
 
 .content-balloon {
