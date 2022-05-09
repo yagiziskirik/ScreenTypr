@@ -11,7 +11,7 @@ ScreenTypr is a tool for interactive chatboxes for illustration purposes.
 * Customisation
 
 ## Installation
-* You can download the program from [here](https://www.google.com).
+* You can download the program from [here](https://github.com/yagiziskirik/ScreenTypr/releases).
 
 ## Usage
 * You can type `!help` to show help window.
@@ -22,4 +22,9 @@ ScreenTypr is a tool for interactive chatboxes for illustration purposes.
 * `!quit!` command closes the app.
 
 ## Compiling
-You can compile the app by `npm run make`.
+Download [node.js](https://nodejs.org/en/) and `cd` into directory.
+You can compile the app by
+```sh
+npm install
+npm run make
+```
